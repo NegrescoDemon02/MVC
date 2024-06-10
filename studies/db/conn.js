@@ -1,16 +1,19 @@
 const { Sequelize } = require('sequelize')
 
-const sequelize = new Sequelize('nodemonmvc', 'root', '', {
+const sequelize = new Sequelize('nodemonmvc', 'root', 'vertrigo', {
     host: 'localhost',
     dialect: 'mysql',
 })
 
-try{
-
-    sequelize.authenticate()
-    console.log('Conectamos ao MySQL!')
-}catch(error){
-    console.log(`Não foi possivel se conectar: ${error}`)
+async function testConnection() {
+    try {
+        await sequelize.authenticate()
+        console.log('Conectamos ao MySQL!')
+    } catch (error) {
+        console.log(`Não foi possível se conectar: ${error}`)
+    }
 }
+
+testConnection()
 
 exports.default = sequelize
