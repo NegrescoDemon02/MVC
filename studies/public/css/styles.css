@@ -62,3 +62,43 @@ form input[type="submit"]{
 }
 
 /*  Pagina de todas as tarefas */
+
+.task-list{
+    list-style: none;
+    margin-top: 1em;
+}
+
+.task-list li{
+    padding: .5em;
+    margin-bottom: 1em;
+    border-bottom: 1px solid #efefef;
+    display: flex;
+    justify-content: space-between;
+}
+
+.task-list .title{
+    font-weight: bold;
+    color: #db4c3f;
+    transition: .5s;
+    font-size: 1.2em;
+}
+/*  ao passar o mouse, ele muda de cor */
+.task-list .title:hover{
+    color: #333;
+}
+
+/*  Mudando os icones  */
+
+.actions{
+    display: flex;
+}
+
+.actions i{
+    font-size: 1.5em;
+    margin-right: .6em;
+    color: #333;
+}
+/* muda de cor ao passar o mouse */
+.actions i:hover{
+    color: #db4c3f;
+}
