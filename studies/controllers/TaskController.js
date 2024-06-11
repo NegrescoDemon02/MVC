@@ -16,6 +16,14 @@ module.exports = class TaskController {
         res.redirect('/tasks')
     }
 
+    static async updateTask(req, res){
+        const id = req.params.id
+
+        const task = await Task.findOne({where: {id: id}, raw: true})
+
+        res.render('tasks/edit', {task})
+    }
+
     static async removeTask(req,res){
         const id = req.body.id
         // filtro
